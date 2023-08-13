@@ -31,6 +31,12 @@ module ActiveRecord  # :nodoc:
 
           column
         end
+
+        private
+
+        def valid_column_definition_options
+          super + [:geographic, :srid, :spatial_type, :has_m, :has_z]
+        end
       end
 
       module ColumnDefinitionUtils
